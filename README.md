@@ -61,6 +61,9 @@ Below is an example of Cron job running the script every 6 hours for OpenVPN cli
 0 	*/6 	* 	* 	* 	root 	/usr/local/sbin/pfsense-vpn-rotator.sh 1
 ```
 
+## Testing
+pfSense CE version 2.7.2-RELEASE 
+
 ## Troubleshooting
 If you are unsure of your vpnid you can run the following commands from the shell on pfSense to view the Openvpn client configuration information:
 ```terminal

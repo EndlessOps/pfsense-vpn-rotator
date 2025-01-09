@@ -1,4 +1,6 @@
 # pfSense OpenVPN Client Rotator / Randomizer
+  
+### Last tested on pfSense CE 2.7.2-RELEASE (PHP 8.2.11)
 
 ## Overview
 
@@ -60,18 +62,16 @@ Below is an example of Cron job running the script every 6 hours for OpenVPN cli
 ```terminal
 0 	*/6 	* 	* 	* 	root 	/usr/local/sbin/pfsense-vpn-rotator.sh 1
 ```
+Note: Offset cron schedule times for each vpnid (ie. Don't have vpnid 1 and 2 trying to set and restart the Openvpn client at same time).
 
-## Testing
-pfSense CE version 2.7.2-RELEASE 
+## Troubleshooting 
 
-## Troubleshooting
 If you are unsure of your vpnid you can run the following commands from the shell on pfSense to view the Openvpn client configuration information:
 ```terminal
 pfSsh.php
 print_r(config_get_path('openvpn/openvpn-client', array()));
 exec;
 exit
-
 ```
 
 ## License

@@ -7,22 +7,22 @@
 ## Features
 
 - Safely rotates VPN server configurations using the `pfSsh.php` command.
+- Compatible with PHP 8.x versions of pfSense.
 - Eliminates the risks associated with direct editing of `config.xml`.
 - Automatically selects a random VPN server from predefined lists.
 - Dynamically updates OpenVPN client configurations on pfSense.
 - Restarts the VPN service to apply changes seamlessly.
 - Supports multiple server lists based on VPN IDs.
 
-## Why `pfSsh.php`?
-
-The script leverages `pfSsh.php` for configuration changes rather than directly modifying `config.xml`. This approach reduces the risk of file corruption and syntax errors, ensuring the stability and integrity of your pfSense system's configuration. It's a best practice recommended for making programmable changes to pfSense configurations.
-
 ## Prerequisites
 
 - You must have fully configured and working OpenVPN client configurations.
-- pfSense 2.7.2 or later.
 - Access to the pfSense shell and `/usr/local/sbin/pfSsh.php`.
 - Basic understanding of shell scripting and pfSense configuration.
+
+## Why `pfSsh.php`?
+
+The script leverages `pfSsh.php` for configuration changes rather than directly modifying `config.xml`. This approach reduces the risk of file corruption and syntax errors, ensuring the stability and integrity of your pfSense system's configuration. It's a best practice recommended for making programmable changes to pfSense configurations.
 
 ## Installation
 
@@ -65,9 +65,10 @@ Below is an example of Cron job running the script every 6 hours for OpenVPN cli
 If you are unsure of your vpnid you can run the following commands from the shell on pfSense to view the Openvpn client configuration information:
 ```terminal
 pfSsh.php
-print_r($config['openvpn']['openvpn-client']);
+print_r(config_get_path('openvpn/openvpn-client', array()));
 exec;
 exit
+
 ```
 
 ## License

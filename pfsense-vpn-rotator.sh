@@ -33,7 +33,7 @@ vpnid="$1"
 
 # Define your server lists, the number should match the vpnid
 # The server_name is added to the OpenVPN client description for easy identification
-server_name1="SurfShark US Endpoints"
+server_name1="SurfShark US Endpoints 1"
 #93.152.210.213 1443 End of SurfShark US Endpoints
 #91.245.254.58 1443 Start of SurfShark CA Endpoints
 #149.22.81.152 1443 End of SurfShark CA Endpoints
@@ -55,6 +55,16 @@ server_list1="
 149.40.56.17 1443
 212.102.44.71 1443
 93.152.220.170 1443
+"
+# Define your server lists, the number should match the vpnid
+# The server_name is added to the OpenVPN client description for easy identification
+server_name2="SurfShark US Endpoints 2"
+#93.152.210.213 1443 End of SurfShark US Endpoints
+#91.245.254.58 1443 Start of SurfShark CA Endpoints
+#149.22.81.152 1443 End of SurfShark CA Endpoints
+#185.108.105.79 1443 Start of SurfShark UK Endpoints
+#217.146.83.105 1443 End of SurfShark UK Endpoints
+server_list2="
 45.86.211.64 1443
 79.110.54.59 1443
 66.235.168.215 1443
@@ -69,6 +79,7 @@ server_list1="
 139.28.176.29 1443
 188.240.57.123 1443
 217.146.83.105 1443
+146.70.175.69 1443
 "
 
 run_pfshell_cmd_getconfig() {
